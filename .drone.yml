@@ -1,3 +1,11 @@
+---
+kind: pipeline
+name: default
+
+platform:
+  os: linux
+  arch: amd64
+
 pipeline:
   run_golang:
     group: build
@@ -34,3 +42,4 @@ pipeline:
         > author: {{build.author}}
         > github commit: <https://github.com/{{ repo.owner }}/{{ repo.name }}/commit/{{build.commit}}|{{truncate build.commit 8}}>
       {{/success}}
+...
